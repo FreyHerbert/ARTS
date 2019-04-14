@@ -4,7 +4,7 @@
 
 这道题考验的是对链表的遍历，在遍历两个长度不同的链表时，需要注意它们的边界，在计算方面由于是十进制的加法，在考虑进位时可以通过`除 10 `获得进位的值，`余 10` 获得个位的值
 以下是代码
-```
+```java
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -83,13 +83,13 @@ Redis 的优点有
 redis 的配置
 可以通过 CONFIG 命令来查看和设置 redis 的配置，也可以通过修改配置文件，默认的配置文件位于 redis 应用更目录下，名叫 `redis.conf` 的文件
 例子：获取链接的端口，若要查看所有能配置的属性可以通过 `CONFIG GET *` 命令
-```
+```shell
 127.0.0.1:6379> CONFIG GET PORT
 1) "port"
 2) "6379"
 ```
 例子：设置日志等级
-```
+```shell
 redis 127.0.0.1:6379> CONFIG SET loglevel "notice" 
 OK 
 redis 127.0.0.1:6379> CONFIG GET loglevel  
@@ -107,7 +107,7 @@ redis 支持 5 种数据类型
 ###String
 String 在 Redis 中是一串连续的字节，它是二进制安全的（什么是二进制安全？）,则意味着它的长度不是由任何的结束符来确定的，你一次可以存储大小不超过 512 MB 的 String 数据
 例子如下
-```
+```shell
 # SET 用于存储一个 String
 redis 127.0.0.1:6379> SET name "tutorialspoint" 
 OK 
@@ -119,7 +119,7 @@ redis 127.0.0.1:6379> GET name
 ###Hashes
 Hashes 是一种键值对集合，这里的键和值都是字符串类型的，redis 可以存储超过 40 亿个键值对
 例子如下
-```
+```shell
 # HMSET 用于存储一个 Hashes
 127.0.0.1:6379> HMSET hello 1 one 2 two
 OK
@@ -139,7 +139,7 @@ OK
 ###List
 List 中存储的也是字符串，里面的数据按照插入顺序进行排序，你可以从头部或尾部插入一个数据到 List 中，每个 List 最大可以存储 $2^{32} - 1$ 个数据
 例子如下
-```
+```shell
 # lpush 命令用于添加操作
 127.0.0.1:6379> lpush testList one
 (integer) 1
@@ -158,7 +158,7 @@ List 中存储的也是字符串，里面的数据按照插入顺序进行排序
 ### Sets
 Sets 是一个无序的字符串集合，并且不存储重复元素，你可以添加或移除元素，并且对判断一个元素是否在这个集合里所用的时间复杂度是 O(1) ，每个 Set 最大可以存储 $2^{32} - 1$ 个数据
 例子如下
-```
+```shell
 redis 127.0.0.1:6379> sadd tutoriallist redis 
 (integer) 1 
 redis 127.0.0.1:6379> sadd tutoriallist mongodb 
@@ -177,7 +177,7 @@ redis 127.0.0.1:6379> smembers tutoriallist
 ### Sorted Sets
 Sorted Sets 与 Sets 类型有些相似，它也不存储重复的元素，不同的地方在于每个存储在 Sorted Sets 里的元素都会关联到一个 score 上，Sorted Sets 根据 score 的大小对元素进行排序（从小到大）。在 Sorted Sets 中元素是不会重复的，当 score 是可以重复的
 例子如下
-```
+```shell
 redis 127.0.0.1:6379> zadd tutoriallist 0 redis 
 (integer) 1 
 redis 127.0.0.1:6379> zadd tutoriallist 0 mongodb 
