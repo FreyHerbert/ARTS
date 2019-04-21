@@ -103,7 +103,7 @@ usr：类似 windows 下的 program files 目录
 lost+found：这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件。
 
 ## Share
-这周把上周提到的红黑树给实现出来了，[点击查看代码]()
+这周把上周提到的红黑树给实现出来了，[点击查看代码](https://github.com/FreyHerbert/ARTS/blob/master/RB-Tree-Implement.md)
 
 在实现中需要注意的细节有，插入时首先是将节点置为红色后插入，插入后根据`叔叔节点`颜色以及在`父亲节点`的左侧或是右侧，需要分类处理
 
