@@ -96,8 +96,7 @@ redis
 
 
 ## Share
-这周学习 Java 内存模型于内存管理
-
+这周学习 Java 内存模型于内存管理 
 了解 Java 内存管理有助于理解 java 垃圾回收器的运行。在 java 内存模型中堆内存被分成了两个部分 Yuang Generation 和 Old Generation，可以叫做年轻代和老年代
 
 ### 年轻代的内存管理
